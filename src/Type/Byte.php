@@ -32,4 +32,9 @@ class Byte implements TypeInterface
 
         return $segment;
     }
+	
+	public function write(BinaryWriter &$bw, $value)
+	{
+		array_push($bw->inputHandle = pack("C", $value))
+	}
 }

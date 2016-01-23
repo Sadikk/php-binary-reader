@@ -44,6 +44,12 @@ class Int32 implements TypeInterface
 
         return $data;
     }
+	
+	public function write(BinaryWriter &$bw, $value)
+	{
+		$endian = $bw->getEndian() == Endian::ENDIAN_BIG ? $this->endianBig : $this->endianLittle;
+		array_push($bw->inputHandle = pack($endian, $value))
+	}
 
     /**
      * Returns a Signed 32-Bit Integer

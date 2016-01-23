@@ -28,6 +28,11 @@ class String implements TypeInterface
 
         return $str;
     }
+	
+	public function write(BinaryWriter &$bw, $value)
+	{
+		array_push($bw->inputHandle = pack("H", b$value))
+	}
 
     /**
      * @param  \PhpBinaryReader\BinaryReader $br
